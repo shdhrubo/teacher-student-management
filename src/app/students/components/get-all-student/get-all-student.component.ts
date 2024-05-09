@@ -30,7 +30,6 @@ export class GetAllStudentComponent implements OnInit {
         this.students = data;
       },
       (error) => {
-        // this.globalErrorHandler.handleError(error);
         console.log(error);
       }
     );
