@@ -27,7 +27,6 @@ export class UpdateTeacherComponent implements OnInit {
     private teacherGetService: TeacherGetService,
     private route: ActivatedRoute,
     private toastr: ToastrService,
-    private globalErrorHandler: GlobalErrorHandlingService
   ) {}
 
   ngOnInit(): void {
@@ -56,9 +55,7 @@ export class UpdateTeacherComponent implements OnInit {
             subject: '',
           };
         },
-        (error) => {
-          this.globalErrorHandler.handleError(error);
-        }
+        (error) => {},
       );
   }
 }

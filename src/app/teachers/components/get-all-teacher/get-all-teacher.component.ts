@@ -30,7 +30,7 @@ export class GetAllTeacherComponent implements OnInit {
     private router: Router,
     public dialog: MatDialog,
     private deleteTeacherService: TeacherDeleteService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
   ) {}
 
   ngOnInit(): void {
@@ -52,17 +52,13 @@ export class GetAllTeacherComponent implements OnInit {
         },
         (error) => {
           console.log(error);
-        }
+        },
       );
   }
 
   updateTeacher(teacher: ITeacherWithId) {
     this.router.navigate(['teachers/update-teacher', teacher.id]);
   }
-
-  // deleteTeacher(teacher: ITeacherWithId) {
-  //   this.router.navigate(['teachers/delete-teacher', teacher.id]);
-  // }
 
   viewDetails(teacher: ITeacherWithId) {
     this.router.navigate(['teachers/get-teacher-details', teacher.id]);
@@ -96,7 +92,7 @@ export class GetAllTeacherComponent implements OnInit {
           },
           (error) => {
             // this.globalErrorHandler.handleError(error);
-          }
+          },
         );
       }
     });
